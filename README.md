@@ -8,3 +8,5 @@ Done by: Ervin Lin, Tephaune Frazer, Cristina Gonzales
 2. The second API call uses the result of the first API call as a variable to find your location.
 3. The third API call again uses the result of the first API call as a variable to find the weather at your location.
 4. The fourth API uses the result of the second API call as a variable to find the weather at your location.git
+
+Checkout the website here: https://ervinlinub.github.io/nf-lab-7-part-b/
