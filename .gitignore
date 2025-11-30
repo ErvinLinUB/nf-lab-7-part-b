@@ -1,0 +1,58 @@
+# Compiled object files
+*.o
+*.obj
+
+# Compiled dynamic libraries
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Compiled static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.elf
+
+# Debug / build files
+*.pdb
+*.mod*
+*.cmd
+*.log
+*.cache
+*.diff
+*.err
+*.orig
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Build system folders
+/build/
+/bin/
+/lib/
+/dist/
+/Debug/
+/Release/
+
+# IDE / editor settings
+.vscode/
+.idea/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+
+# Mac / Linux system files
+.DS_Store
+Thumbs.db
