@@ -2,16 +2,23 @@ body {
     font-family: Arial;
     background-color: #1e1e2e;
     color: #cdd6f4;
-    margin-left: 30rem;
-    margin-right: 30rem;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
 }
 
 .title {
     background-color: #f9e2af;
     color: #1e1e2e;
     border-radius: 10px;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+    margin: 0;
 }
 
 .doneBy {
@@ -20,25 +27,41 @@ body {
     color: #1e1e2e;
     border-radius: 10px;
     padding: 10px;
+    margin-top: 0.75rem;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 1rem 0;
 }
 
 .s1 {
     color: #cdd6f4;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 }
 
 .runCodeBtn {
     display: inline-flex;
     align-items: center;
+    gap: 0.6rem;
     color: #1e1e2e;
     background-color: #94e2d5;
     border: 1px black solid;
     border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 25px;
+    padding: 10px 22px;
     font-size: 20px;
     cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    overflow: visible;
+    white-space: normal;
+    word-break: break-word;
+    justify-content: center;
 }
 
 .runCodeBtn:hover {
@@ -47,9 +70,10 @@ body {
 }
 
 .play2 {
-    height: 2rem;
     width: 2rem;
-    padding-right: 10px;
+    height: 2rem;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .s2 {
@@ -107,9 +131,81 @@ body {
 }
 
 .s5 > img {
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    display: block;
 }
 
 h2 {
     font-size: 2rem;
+    margin: 0 0 0.4rem 0;
+}
+
+/* responsive rules */
+@media (max-width: 900px) {
+    body {
+        max-width: 900px;
+        padding: 1rem;
+    }
+
+    .runCodeBtn {
+        font-size: 18px;
+        padding: 9px 18px;
+    }
+
+    .title {
+        font-size: 1.15rem;
+        padding: 10px;
+    }
+
+    .doneBy {
+        font-size: 0.95rem;
+    }
+
+    .s5 {
+        margin-top: 1.25rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    .runCodeBtn {
+        width: 100%;
+        justify-content: center;
+        font-size: 16px;
+        padding: 8px 10px;
+        box-sizing: border-box;
+        white-space: normal;
+    }
+
+    .play2 {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .s2, .s3, .s4 {
+        min-height: 4rem;
+        padding-top: 0.25rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .s5 > img {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 1rem;
+        padding: 8px;
+    }
 }
