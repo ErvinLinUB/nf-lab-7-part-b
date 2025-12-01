@@ -42,8 +42,12 @@ async function startSequence() {
         const meteoRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
         if (!meteoRes.ok) throw new Error('Weather Fetch Failed');
         const meteoData = await meteoRes.json();
+        
+        if (!meteoData.current_weather) throw new Error('No weather data');
+        
         const cw = meteoData.current_weather;
         const code = cw.weathercode;
+        console.log('Weather code:', code);
         const desc = getWeatherDescription(code);
         const temp = cw.temperature;
         weatherSection.innerHTML = `<h2>The weather there is:</h2><p>${desc} • ${temp}°C</p>`;
@@ -67,6 +71,8 @@ function getWeatherDescription(code) {
         51: 'Light drizzle', 53: 'Moderate drizzle', 55: 'Dense drizzle',
         61: 'Slight rain', 63: 'Moderate rain', 65: 'Heavy rain',
         71: 'Slight snow', 73: 'Moderate snow', 75: 'Heavy snow',
+        80: 'Slight rain showers', 81: 'Moderate rain showers', 82: 'Violent rain showers',
+        85: 'Slight snow showers', 86: 'Heavy snow showers',
         95: 'Thunderstorm', 96: 'Thunderstorm with slight hail', 99: 'Thunderstorm with heavy hail'
     };
     return c[code] || 'Unknown conditions';
